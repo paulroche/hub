@@ -74,7 +74,7 @@ func RetrieveData() (*Metadata, error) {
 		Timeout: time.Second * 60, // Timeout after 60 seconds (seems massively long is this dial-up?)
 	}
 
-	req, err := http.NewRequestWithContext(context.TODO(), http.MethodGet, fmt.Sprintf("http://%s:50061/metadata", metadataURL), nil)
+	req, err := http.NewRequestWithContext(context.TODO(), http.MethodGet, fmt.Sprintf("%s/metadata", metadataURL), nil)
 	if err != nil {
 		return nil, err
 	}
